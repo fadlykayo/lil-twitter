@@ -24,8 +24,8 @@ module.exports = {
   },
 
   getTweetByUserId: (req, res) => {
-    Tweets.findOne({
-      userid: req.params.userid
+    Tweets.find({
+      userid: req.params.id
     }).then(function (data) {
       res.send(data)
     }).catch(function (err) {
@@ -34,7 +34,7 @@ module.exports = {
   },
 
   searchTweet: (req, res) => {
-    Tweets.findOne({
+    Tweets.find({
       content: {
         $regex: req.query.q,
         $options: 'i'

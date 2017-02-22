@@ -7,7 +7,7 @@ const TweetSchema = new mongoose.Schema({
     ref: 'Users'
   },
   postedby: String,
-  tag: []
+  tag: Array
 },
   {
     timestamps: true

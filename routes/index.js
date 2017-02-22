@@ -26,7 +26,7 @@ router.get('/api/twatt', tweetController.getAllTweets)
 
 router.get('/api/twatt/:id', tweetController.getTweetByUserId)
 
-router.post('/api/twatt/:id', tweetController.createTweet)
+router.post('/api/twatt', tweetController.createTweet)
 
 router.delete('/api/twatt/:id', tweetController.deleteTweet)
 
