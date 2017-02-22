@@ -23,6 +23,16 @@ module.exports = {
     })
   },
 
+  getTweetById: (req, res) => {
+    Tweets.findOne({
+      _id: req.params.id
+    }).then(function (data) {
+      res.send(data)
+    }).catch(function (err) {
+      res.send(err)
+    })
+  },
+
   getTweetByUserId: (req, res) => {
     Tweets.find({
       userid: req.params.id
