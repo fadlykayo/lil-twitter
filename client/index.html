@@ -15,7 +15,7 @@
           <a href="/index.html" style="color: #f0f4c3;" class="brand-logo">Mini Twitter</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#"><label class="label-icon" for="search"><i class="material-icons">search</i></label></a></li>
-            <li><input id="search" type="search" required></li>
+            <li><input id="search" v-model="search" v-on:keyup="searchTweet()" type="search" required></li>
             <li><a style="color: #f0f4c3;" href="#">Home</a></li>
             <li><a style="color: #f0f4c3;" href="#">Profile</a></li>
             <li><a style="color: #f0f4c3;" href="#">Setting</a></li>
@@ -106,6 +106,7 @@
           postedby: '',
           tag: ''
         },
+        search: '',
         tweets: []
       },
       methods: {
@@ -116,6 +117,19 @@
           $.ajax({
             type: 'GET',
             url: 'http://localhost:3000/api/twatt',
+            success: function(resp) {
+              app.tweets = resp
+            },
+            error: function() {
+              console.log('GET loadTweets request error');
+            }
+          });
+        },
+
+        searchTweet: function () {
+          $.ajax({
+            type: 'GET',
+            url: `http://localhost:3000/api/twatt/search?q=${app.search}`,
             success: function(resp) {
               app.tweets = resp
             },

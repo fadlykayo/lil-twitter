@@ -10,6 +10,26 @@ var users = require('./routes/users')
 
 var app = express()
 
+// ===== Passport =====
+var passport = require('passport')
+var LocalStrategy = require('passport-local')
+// passport.use(new LocalStrategy(
+//   function (username, password, done) {
+//     User.findOne({ username: username }, function (err, user) {
+//       if (err) { return done(err); }
+//       if (!user) { return done(null, false); }
+//       if (user) {
+//         if(hash.verify(user.password, password)) {
+//           var token = jwt.sign({username: user.username})
+//           res.send({token:token})
+//         }
+//       }
+//       if (!user.verifyPassword(password)) { return done(null, false); }
+//       return done(null, user)
+//     })
+//   }
+// ))
+
 // ====== Cors ======
 let cors = require('cors')
 app.use(cors())
