@@ -59,6 +59,10 @@ module.exports = {
       content: {
         $regex: req.query.q,
         $options: 'i'
+      },
+      postedby: {
+        $regex: req.query.q2,
+        $options: 'i'
       }
     }).then(function (data) {
       res.send(data)
