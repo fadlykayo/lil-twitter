@@ -3,6 +3,17 @@ const Tweets = require('../models/tweets')
 module.exports = {
   createTweet: (req, res) => {
     let parsedTag = JSON.parse(req.body.tag)
+
+    // var tempContent = req.body.content.split(' ')
+    // for (var i = 0; i < tempContent.length; i++) {
+    //   if(tempContent[i][0]=="#"){
+    //     var datalagi = tempContent[i]
+    //     datalagi = datalagi.replace(/#/g, "")
+    //     tempContent[i]=`<a href="#" onclick="searchHashtag('${datalagi}')">${tempContent[i]}</a>`
+    //   }
+    // }
+    // tempContent = tempContent.join(' ')
+
     Tweets.create({
       content: req.body.content,
       userid: req.body.userid,
