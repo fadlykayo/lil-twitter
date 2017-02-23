@@ -85,42 +85,13 @@
       <div v-if="page=='login'">
         <div class="container">
           <div class="row">
-            <div class="col s12 m6 offset-m3">
 
-            </div>
 
-            <div class="col s12 m6 offset-m3">
+            <div class="col s12 m6 offset-m3" style="margin-top: 20px;">
               <ul class="tabs">
-                <li class="tab col s6 m3" style="color: #006666;"><a href="#login">Sign In</a></li>
-                <li class="tab col s6 m3" style="color: #006666;"><a href="#register">Register</a></li>
+                <li class="tab s12 m6 offset-m3" style="color: #006666;"><a href="#login">Sign In</a></li>
+                <li class="tab s12 m6 offset-m3" style="color: #006666;"><a href="#register">Register</a></li>
               </ul>
-
-              <div id="login" class="card" style="background-color: hsl(148, 52%, 98%);">
-                <div class="card-content white-text">
-                  <div  class="row">
-                    <div class="row" style="margin-left: 10px;">
-                      <span class="card-title" style="color: #006666;">Sign In</span>
-                      <p style="color: #006666;" id="error-message"></p>
-                    </div>
-                    <form id="login-form" class="col s12" method="post">
-                      <div class="row">
-                        <div class="input-field col s12" style="color: #006666;">
-                          <input placeholder="Username" id="username" name="username" type="text" class="validate">
-                          <label for="username">Username</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12" style="color: #006666;">
-                          <input placeholder="Password" id="password" name="password" type="password" class="validate">
-                          <label for="password">Password</label>
-                        </div>
-                      </div>
-                      <button type="submit" class="btn teal darken-3">Login</button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-
               <div id="register" class="card" style="background-color: hsl(148, 52%, 98%);">
                 <div class="card-content white-text">
                   <div  class="row">
@@ -149,8 +120,36 @@
                   </div>
                 </div>
               </div>
-
             </div>
+
+            <div class="col s12 m6 offset-m3">
+              <div id="login" class="card" style="background-color: hsl(148, 52%, 98%);">
+                <div class="card-content white-text">
+                  <div  class="row">
+                    <div class="row" style="margin-left: 10px;">
+                      <span class="card-title" style="color: #006666;">Sign In</span>
+                      <p style="color: #006666;" id="error-message"></p>
+                    </div>
+                    <form id="login-form" class="col s12" method="post">
+                      <div class="row">
+                        <div class="input-field col s12" style="color: #006666;">
+                          <input placeholder="Username" id="username" name="username" type="text" class="validate">
+                          <label for="username">Username</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12" style="color: #006666;">
+                          <input placeholder="Password" id="password" name="password" type="password" class="validate">
+                          <label for="password">Password</label>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn teal darken-3">Login</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
